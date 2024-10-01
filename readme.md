@@ -50,11 +50,9 @@ spring.datasource.password=tu_contraseña
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-4. Compilar y ejecutar la aplicación
-Utiliza Maven para compilar y ejecutar la aplicación:
+4. Ejecutar el proyecto:
 
-mvn clean install
-mvn spring-boot:run
+ejecutar el proyecto corriendo java desde el archivo DemoApplication.java
 
 Uso
 Una vez que la aplicación esté en funcionamiento, puedes acceder a la API en:
