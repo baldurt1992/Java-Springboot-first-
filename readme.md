@@ -14,8 +14,8 @@ Este proyecto es una aplicación de Java con Spring Boot que se conecta a una ba
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/usuario/proyecto-java.git
-cd proyecto-java
+git clone https://github.com/baldurt1992/Java-Springboot-first-.git
+cd Java-Springboot-first-
 
 
 2. Configurar la base de datos
