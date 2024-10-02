@@ -22,31 +22,35 @@ cd proyecto-java
 Asegúrate de que MySQL esté instalado y ejecutándose.
 Crea una base de datos en MySQL usando el siguiente script:
 
-CREATE DATABASE mi_base_de_datos;
-USE mi_base_de_datos;
+CREATE DATABASE  products;
 
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100),
-    email VARCHAR(100),
-    password VARCHAR(100),
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+USE products;
+
+CREATE TABLE products (
+    product_id BIGINT NOT NULL AUTO_INCREMENT,
+    product_name VARCHAR(255),
+    price DOUBLE,
+    quantity_in_stock INT NOT NULL,
+    manufacture_date VARCHAR(255),
+    is_available TINYINT(1) DEFAULT 1,
+    PRIMARY KEY (product_id)
 );
 
-CREATE TABLE productos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100),
-    descripcion TEXT,
-    precio DECIMAL(10, 2),
-    stock INT
-);
+INSERT INTO products (product_name, price, quantity_in_stock, manufacture_date, is_available) VALUES
+('Headphones', 59.99, 200, '2022-12-01', 1),
+('Desk Lamp', 24.95, 150, '2023-06-25', 0),
+('Coffee Machine', 129.99, 30, '2021-11-05', 1),
+('New Product', 49.99, 100, '2023-09-25', 1),
+('Updated Product', 59.99, 50, '2023-09-26', 0);
+
 
 3. Configurar el archivo application.properties
 Dentro del directorio src/main/resources, edita el archivo application.properties para configurar la conexión con la base de datos:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/mi_base_de_datos
-spring.datasource.username=tu_usuario
-spring.datasource.password=tu_contraseña
+spring.application.name=demo
+spring.datasource.url=jdbc:mysql://localhost:3306/example1
+spring.datasource.username=root
+spring.datasource.password=Anb133444@@@34
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
